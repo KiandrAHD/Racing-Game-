@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Multilingual Racing Game</title>
+    <link rel="stylesheet" href="style/warna.css">
+</head>
+
+<body>
+    <div id="game-container">
+        <div id="ui-overlay">
+            <div id="score-display"></div>
+            <div id="coins-display"></div>
+            <div id="time-display"></div>
+            <div id="speed-display"></div>
+        </div>
+        <canvas id="game-canvas"></canvas>
+        <div id="controls">
+            <button id="lang-toggle">Switch to Bahasa</button>
+            <button id="help-btn">?</button>
+        </div>
+
+        <!-- Start Screen -->
+        <div id="start-screen">
+            <h1 id="title">Racing Game</h1>
+            <div class="path-selection">
+                <h3 id="path-select-text">Select Path:</h3>
+                <div class="path-options">
+                    <div class="path-option" data-path="city">
+                        <div class="path-preview" style="background: linear-gradient(to bottom, #555, #888)"></div>
+                        <span id="path-city">City Highway</span>
+                    </div>
+                    <div class="path-option" data-path="desert">
+                        <div class="path-preview" style="background: linear-gradient(to bottom, #D2B48C, #F4A460)">
+                        </div>
+                        <span id="path-desert">Desert Road</span>
+                    </div>
+                    <div class="path-option" data-path="forest">
+                        <div class="path-preview" style="background: linear-gradient(to bottom, #228B22, #006400)">
+                        </div>
+                        <span id="path-forest">Forest Trail</span>
+                    </div>
+                </div>
+            </div>
+            <div id="language-selection">
+                <button class="language-btn" data-lang="en">English</button>
+                <button class="language-btn" data-lang="id">Bahasa Indonesia</button>
+            </div>
+            <div class="instructions">
+                <p id="controls-text">Controls: A/D keys to move left/right</p>
+            </div>
+            <button id="start-btn" class="start-button">Start Game</button>
+        </div>
+
+        <!-- Game Over Screen -->
+        <div id="game-over-screen">
+            <h2 id="game-over-text">Game Over!</h2>
+            <p id="final-score-text">Your score: 0</p>
+            <p id="final-coins-text">Coins collected: 0</p>
+            <button id="restart-btn">Play Again</button>
+        </div>
+
+        <!-- Help Modal -->
+        <div id="help-modal" class="modal">
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <h3 id="help-title">Game Instructions</h3>
+                <div class="instructions-list">
+                    <p>🔄 <span id="help-controls">Use A and D keys to control your car</span></p>
+                    <p>⭐ <span id="help-coins">Collect gold coins for bonus points</span></p>
+                    <p>🚗 <span id="help-obstacles">Avoid red obstacles</span></p>
+                    <p>⚡ <span id="help-speed">Speed increases with your score</span></p>
+                    <p>🌅 <span id="help-time">Time of day changes every 300 points</span></p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="Brain/game.js"></script>
+</body>
+
+</html>
